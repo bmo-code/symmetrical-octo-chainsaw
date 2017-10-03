@@ -23,6 +23,6 @@ console.log(brands.delete('mustang')); // Renvoit FALSE et ne supprime pas
 brands.forEach(function(val1, val2, val3) {
     console.log(val1); // CLE
     console.log(val2); // VALEUR
-    console.log(val3); // LA FONCTION
+    console.log(val3); // LE SET LUI-MEME
 }); 
 

@@ -33,6 +33,8 @@ console.log(myVehicule);
 
 myVehicule.klaxone();
 
+console.log('------------------------');
+
 class VoitureDeCourse extends Vehicule {
     constructor(brand, color, vitesse) {
         super(brand, color);
