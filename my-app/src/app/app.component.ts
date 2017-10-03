@@ -5,9 +5,10 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
 
   collection: any;
+  newItem: any;
 
   ngOnInit(): void {
     this.collection = [
@@ -15,6 +16,16 @@ export class AppComponent implements OnInit{
       {reference: '2222', name: 'Patrick', state: 1},
       {reference: '3333', name: 'Quentin', state: 2}
     ];
+    this.resetNewItem();
+  }
+
+  addItem() {
+    this.collection.push(this.newItem);
+    this.resetNewItem();
+  }
+
+  resetNewItem() {
+    this.newItem = {name: '', reference: '', state: 0};
   }
 
 }
