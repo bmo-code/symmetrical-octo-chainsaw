@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="navb ar navbar-light">
+    <form class="form-inline my-2 my-lg-0">
+      <input
+        (keyup)="$event"
+        #recherche
+        class="form-control mr-sm-2"
+        type="text"
+        placeholder="Search"
+        aria-label="Search">
+    </form>
+  </div>
+</div>
+
+<div class="container">
+  <div *ngFor="let item of collection | filter:recherche.value" class="card">
+    <div class="card-header">
+      <span class="state-0" *ngIf="0 == item.state">A livrer</span>
+      <span class="state-1" *ngIf="1 == item.state">En cours de livraison</span>
+      <span class="state-2" *ngIf="2 == item.state">Commande livrée</span>
+    </div>
+    <div class="card-body">
+      <h4 class="card-title">{{ item.name }}</h4>
+      <p class="card-text">{{ item.reference }}.</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+</div>
