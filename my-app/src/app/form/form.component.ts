@@ -3,7 +3,7 @@ import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms'
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalComponent } from '../modal/modal.component';
 import { Item } from '../item';
-import { Observable } from 'rxjs/Observable';
+import { CollectionService } from '../collection.service';
 
 @Component({
   selector: 'app-form',
@@ -22,7 +22,8 @@ export class FormComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private modalService: NgbModal
+    private modalService: NgbModal,
+    private _CollectionService: CollectionService
   ) {
     this.nameCtrl = fb.control('', [
       Validators.required,
@@ -46,11 +47,16 @@ export class FormComponent implements OnInit {
 
   emitResult() {
     console.log(this.form.value);
-    this.formResult.emit({
+    this._CollectionService.addItem({
+        name: this.form.get('name').value,
+        reference: this.form.get('ref').value,
+        state: this.form.get('state').value
+      });
+    /*this.formResult.emit({
       name: this.form.get('name').value,
       reference: this.form.get('ref').value,
       state: this.form.get('state').value
-    });
+    });*/
     this.open();
     this.resetForm();
   }
@@ -71,7 +77,7 @@ export class FormComponent implements OnInit {
   open() {
     const modalRef = this.modalService.open(ModalComponent);
     modalRef.componentInstance.msg = 'Votre commande a bien été ajouté !';
-    setInterval(() => modalRef.close(), 5000);
+    //setInterval(() => modalRef.close(), 5000);
   }
 
 }
