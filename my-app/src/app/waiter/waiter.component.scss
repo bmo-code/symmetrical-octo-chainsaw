@@ -1,0 +1,15 @@
+.waiter {
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  z-index: 9999;
+  background-color: black;
+  opacity: 0.4;
+  align-items: center;
+  justify-content: center;
+}
