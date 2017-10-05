@@ -4,6 +4,8 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Item } from '../item';
 import { CollectionService } from '../collection.service';
 import {WaiterService} from '../../waiter/waiter.service';
+import {ModalComponent} from '../../modal/modal.component';
+import {WaiterComponent} from '../../waiter/waiter.component';
 
 @Component({
   selector: 'app-form',
@@ -26,7 +28,6 @@ export class FormComponent implements OnInit {
     private fb: FormBuilder,
     private modalService: NgbModal,
     private _CollectionService: CollectionService,
-    private _WaiterService: WaiterService
   ) {
     this.nameCtrl = fb.control('', [
       Validators.required,
@@ -80,8 +81,10 @@ export class FormComponent implements OnInit {
   open() {
     // const modalRef = this.modalService.open(ModalComponent);
     // modalRef.componentInstance.msg = 'Votre commande a bien été ajouté !';
-    this._WaiterService.startQuery();
-    setInterval(() => this._WaiterService.endQuery(), 5000);
+    // this._WaiterService.startQuery();
+    // setInterval(() => this._WaiterService.endQuery(), 5000);
+    this.wait = true;
+    setInterval(() => this.wait = false, 5000);
   }
 
 }

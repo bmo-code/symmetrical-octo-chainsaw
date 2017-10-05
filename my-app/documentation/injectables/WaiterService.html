@@ -71,7 +71,10 @@
                                     <a href="../modules/AppRoutingModule.html" >AppRoutingModule</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../modules/WaiterModule.html" >WaiterModule</a>
+                                    <a href="../modules/ItemModuleModule.html" >ItemModuleModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/ItemRoutingModule.html" >ItemRoutingModule</a>
                                 </li>
                         </ul>
                     </li>
@@ -279,7 +282,10 @@
                                            <a href="../modules/AppRoutingModule.html" >AppRoutingModule</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../modules/WaiterModule.html" >WaiterModule</a>
+                                           <a href="../modules/ItemModuleModule.html" >ItemModuleModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/ItemRoutingModule.html" >ItemRoutingModule</a>
                                        </li>
                                </ul>
                            </li>
@@ -559,7 +565,7 @@
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/waiter/waiter.service.ts:15</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/waiter/waiter.service.ts:16</a></div>
                                         </td>
                                     </tr>
             
@@ -623,10 +629,12 @@ export class WaiterService {
   ) { }
 
   startQuery() {
+    console.log(&#x27;startQuery()&#x27;);
     this._WaiterComponent.wait &#x3D; true;
   }
 
   endQuery() {
+    console.log(&#x27;endQuery()&#x27;);
     this._WaiterComponent.wait &#x3D; false;
   }
 }

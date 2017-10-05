@@ -23,4 +23,7 @@ export class CollectionService {
     this.db.list('/collection').push(item);
   }
 
+  changeState(item: any) {
+    this.db.list('/collection').update(item.isFirebaseRef, item);
+  }
 }

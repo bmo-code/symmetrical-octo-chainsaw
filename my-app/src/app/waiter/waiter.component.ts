@@ -7,7 +7,7 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class WaiterComponent implements OnInit {
 
-  public wait: boolean;
+  @Input() wait: boolean;
 
   constructor() {
   }

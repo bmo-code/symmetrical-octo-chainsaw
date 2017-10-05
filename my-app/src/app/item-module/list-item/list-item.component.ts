@@ -22,6 +22,7 @@ export class ListItemComponent implements OnInit {
 
   changeState(item: Item, state: number) {
     item.state = state;
+    this._CollectionService.changeState(item);
   }
 
 }

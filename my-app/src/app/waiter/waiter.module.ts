@@ -8,10 +8,14 @@ import {WaiterService} from './waiter.service';
     CommonModule,
   ],
   declarations: [
+    WaiterComponent
   ],
   providers: [
     WaiterService,
+  ],
+  exports: [
     WaiterComponent
   ]
 })
 export class WaiterModule { }
+

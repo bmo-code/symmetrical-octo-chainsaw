@@ -6,11 +6,11 @@ import {CollectionService} from './collection.service';
 import {StateDirective} from './state.directive';
 import {FilterPipe} from './filter.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {WaiterModule} from '../waiter/waiter.module';
 import {AngularFireAuthModule} from 'angularfire2/auth';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
 import {AngularFireModule} from 'angularfire2';
 import {environment} from '../../environments/environment.prod';
+import {WaiterModule} from '../waiter/waiter.module';
 
 @NgModule({
   imports: [
@@ -26,7 +26,7 @@ import {environment} from '../../environments/environment.prod';
     ListItemComponent,
     FormComponent,
     FilterPipe,
-    StateDirective
+    StateDirective,
   ],
   providers: [
     CollectionService,
